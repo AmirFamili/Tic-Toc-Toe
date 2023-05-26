@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background:linear-gradient(to right bottom,#174879,#0c6bca,#0c3965);
+    
+    img{
+        position: absolute;
+        display: none;
+        width: 500px;
+        height: 460px;
+        top:80px;
+        z-index: 1;
+        border-radius: 40px;
+    }
+    .show{
+        display: block;
+
+    }
+}
+
+#gameboard {
+    width: 360px;
+    height:360px;
+    display: flex;
+    flex-wrap: wrap;
+
+
+    .square {
+        width: 120px;
+        height: 120px;
+        background-color: white;
+        border: solid 2px #1c5791;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .circle {
+            height: 90px;
+            width: 90px;
+            border-radius: 50%;
+            border: 15px solid blue;
+        }
+
+        .cross {
+            height: 90px;
+            width: 90px;
+            position: relative;
+            transform: rotate(45deg) ;
+        }
+
+        .cross::after,
+        .cross::before {
+            content: "";
+            position: absolute;
+            background-color: red; 
+            
+        }
+
+        .cross::before {
+            left: 50%;
+            width: 30%;
+            margin-left: -15%;
+            height: 100%;
+            
+            
+        }
+        .cross::after{
+            top: 50%;
+            height: 30%;
+            margin-top: -15%;
+            width: 100%;
+        }
+    }
+}
+.info{
+    font-size: 30px;
+    margin-top: 50px;
+    font-weight: bolder;
+    color: white;
+}
+.green{
+   background-color: rgb(7, 186, 7);
+   padding:20px;
+   border-radius: 30px;
+}
